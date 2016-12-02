@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -51,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="953" y="692"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Task View Controller-->
         <scene sceneID="Gks-vT-7rB">
             <objects>
-                <viewController id="0NN-ba-w1h" sceneMemberID="viewController">
+                <viewController id="0NN-ba-w1h" customClass="CreateTaskViewController" customModule="DoIt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oAa-ra-2bC"/>
                         <viewControllerLayoutGuide type="bottom" id="jtW-7u-O0G"/>
@@ -62,8 +63,56 @@
                     <view key="view" contentMode="scaleToFill" id="3IM-qj-zcs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3g-JV-29A">
+                                <rect key="frame" x="162.5" y="79" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mqf-Jc-f1f">
+                                <rect key="frame" x="56" y="110" width="263" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Important:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efi-Rv-XcS">
+                                <rect key="frame" x="147.5" y="170" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xdA-UK-JJw">
+                                <rect key="frame" x="163" y="201" width="51" height="31"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8W-uU-1vX">
+                                <rect key="frame" x="172.5" y="262" width="30" height="30"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="0NN-ba-w1h" eventType="touchUpInside" id="Oqw-yT-lJ1"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mqf-Jc-f1f" firstAttribute="centerX" secondItem="3IM-qj-zcs" secondAttribute="centerX" id="2ZE-Nn-GcP"/>
+                            <constraint firstItem="xdA-UK-JJw" firstAttribute="top" secondItem="Efi-Rv-XcS" secondAttribute="bottom" constant="10" id="DNC-fK-8jl"/>
+                            <constraint firstItem="Mqf-Jc-f1f" firstAttribute="leading" secondItem="3IM-qj-zcs" secondAttribute="leadingMargin" constant="40" id="FmE-i3-Ffh"/>
+                            <constraint firstItem="H8W-uU-1vX" firstAttribute="top" secondItem="xdA-UK-JJw" secondAttribute="bottom" constant="30" id="MfA-oz-Vsl"/>
+                            <constraint firstItem="H8W-uU-1vX" firstAttribute="centerX" secondItem="3IM-qj-zcs" secondAttribute="centerX" id="OXc-8k-EHt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mqf-Jc-f1f" secondAttribute="trailing" constant="40" id="R5U-Gf-JrO"/>
+                            <constraint firstItem="Efi-Rv-XcS" firstAttribute="top" secondItem="Mqf-Jc-f1f" secondAttribute="bottom" constant="30" id="a6U-BA-7XI"/>
+                            <constraint firstItem="R3g-JV-29A" firstAttribute="centerX" secondItem="3IM-qj-zcs" secondAttribute="centerX" id="gyC-9a-Pji"/>
+                            <constraint firstItem="xdA-UK-JJw" firstAttribute="centerX" secondItem="3IM-qj-zcs" secondAttribute="centerX" id="jrq-Dz-TUM"/>
+                            <constraint firstItem="Mqf-Jc-f1f" firstAttribute="top" secondItem="R3g-JV-29A" secondAttribute="bottom" constant="10" id="lKJ-0R-YQ4"/>
+                            <constraint firstItem="R3g-JV-29A" firstAttribute="top" secondItem="oAa-ra-2bC" secondAttribute="bottom" constant="15" id="oMy-UP-wEc"/>
+                            <constraint firstItem="Efi-Rv-XcS" firstAttribute="centerX" secondItem="3IM-qj-zcs" secondAttribute="centerX" id="qPZ-Wk-OdJ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="importantSwitch" destination="xdA-UK-JJw" id="nMh-36-IsM"/>
+                        <outlet property="taskNameTextField" destination="Mqf-Jc-f1f" id="xwx-Gm-UkB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fg0-eg-ZQ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
